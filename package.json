@@ -29,7 +29,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "next build",
+    "build": "next build --max-old-space-size=8192",
     "postbuild": "npm run build-sitemap && npm run build-migrate-db",
     "build-migrate-db": "bun run db:migrate",
     "build-sitemap": "tsx ./scripts/buildSitemapIndex/index.ts",
@@ -78,8 +78,7 @@
     "workflow:docs": "tsx ./scripts/docsWorkflow/index.ts",
     "workflow:i18n": "tsx ./scripts/i18nWorkflow/index.ts",
     "workflow:mdx": "tsx ./scripts/mdxWorkflow/index.ts",
-    "workflow:readme": "tsx ./scripts/readmeWorkflow/index.ts",
-    "fix-memory-limit": "cross-env LIMIT=4096 increase-memory-limit"
+    "workflow:readme": "tsx ./scripts/readmeWorkflow/index.ts"
   },
   "lint-staged": {
     "*.md": [
