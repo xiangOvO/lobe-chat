@@ -29,7 +29,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "next build --max-old-space-size=8192",
+    "build": "next build",
     "postbuild": "npm run build-sitemap && npm run build-migrate-db",
     "build-migrate-db": "bun run db:migrate",
     "build-sitemap": "tsx ./scripts/buildSitemapIndex/index.ts",
